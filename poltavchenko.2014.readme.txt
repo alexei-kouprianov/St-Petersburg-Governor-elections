@@ -1,0 +1,60 @@
+################################################################
+# St. Petersburg governor elections September 14, 2014 data
+# Collected by Central Electoral Commission of Russian Federation
+# Retrieved from the CEK RF website and reduced to a CSV file 
+# by Alexei Kouprianov : alexei.kouprianov@gmail.com
+################################################################
+
+The dataset contains data from the St. Petersburg Governor 
+(`Gubernator') elections (September 14, 2014): 1875 polling 
+stations united in 30 territorial units (`Territorial Electoral 
+Commissions'). 
+
+Data were retrieved manually on December 30, 2017, starting from 
+the URL:
+
+http://www.st-petersburg.vybory.izbirkom.ru/region/st-petersburg?action=show&root_a=178400112&vrn=2782000586119&region=78&global=null&type=0&sub_region=78&prver=0&pronetvd=null
+
+then proceeding to the URL:
+
+http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=2782000586123&vrn=2782000586119&region=78&global=null&sub_region=78&prver=0&pronetvd=null&vibid=2782000586123&type=222
+
+and going down to the Territorial Electoral Commissions pages 
+like:
+
+http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&tvd=2782000586123&vrn=2782000586119&region=78&global=null&sub_region=78&prver=0&pronetvd=null&vibid=2782000586125&type=222
+http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&tvd=2782000586123&vrn=2782000586119&region=78&global=null&sub_region=78&prver=0&pronetvd=null&vibid=2782000586126&type=222
+
+etc., where data on the individual Polling Stations were stored 
+in tables.
+
+################################################################
+# Legend for the variables:
+################################################################
+
+UIK : Polling station;
+UIK.NO : Polling station number (extracted from the original data);
+VOTERS : Number of registered voters;
+BULL.RECEIVED : Number of blank ballots present at the polling station before the start of the election procedure;
+BULL.ISS.PRELIMINARY : Number of ballots issued to the voters before Sep 14, 2014 (within the framework of Early voting);
+BULL.ISS.PRELIMINARY.TIK : Number of ballots issued to the voters before Sep 14, 2014 by the Territorial Electoral Commission (within the framework of Early voting);
+BULL.ISS.UIK.DAYOFVOTE : Number of ballots issued to the voters on Sep 14, 2014 at the polling station;
+BULL.ISS.EXTRA : Number of ballots issued to the voters on Sep 14, 2014 outside the polling station;
+BULL.CANCELLED : Number of unused blank ballots cancelled after the election procedure was over on Sep 14, 2014;
+BULL.PORTABLE_BOXES : Number of ballots discovered in the portable ballot boxes;
+BULL.STATIONARY_BOXES : Number of ballots discovered in the stationary ballot boxes;
+BULL.INVALID : Number of invalid ballots;
+BULL.VALID : Number of valid ballots;
+BULL.LOST : Number of lost ballots;
+BULL.NOT.RECORDED : Number of blank ballots received by the polling station from the Territorial Electoral Commission but not reported in BULL.RECEIVED;
+TIK.NO : Territorial Electoral Commission number (added manually to the original data);
+BIKBAEV : Number of ballots cast for Takhir Rishatovich Bikbaev (Тахир Ришатович Бикбаев);
+BIKBAEV.pct : Share of ballots cast for Takhir Rishatovich Bikbaev (Тахир Ришатович Бикбаев), as presented in the original data;
+IVANOVA : Number of ballots cast for Irina Vladimirovna Ivanova (Ирина Владимировна Иванова);
+IVANOVA.pct : Share of ballots cast for Irina Vladimirovna Ivanova (Ирина Владимировна Иванова), as presented in the original data;
+PETROV : Number of ballots cast for Andrei Nikolaevich Petrov (Андрей Николаевич Петров);
+PETROV.pct : Share of ballots cast for Andrei Nikolaevich Petrov (Андрей Николаевич Петров), as presented in the original data;
+POLTAVCHENKO : Number of ballots cast for Georgii Sergeevich Poltavchenko (Георгий Сергеевич Полтавченко);
+POLTAVCHENKO.pct : Share of ballots cast for Georgii Sergeevich Poltavchenko (Георгий Сергеевич Полтавченко), as presented in the original data;
+SUKHENKO : Number of ballots cast for Konstantin Eduardovich Sukhenko (Константин Эдуардович Сухенко);
+SUKHENKO.pct : Share of ballots cast for Konstantin Eduardovich Sukhenko (Константин Эдуардович Сухенко), as presented in the original data;

@@ -25,10 +25,12 @@ colnames(polt)
 # Obtaining summary polling results;
 polt.TURNOUT.raw <- sum(polt$BULL.INVALID + polt$BULL.VALID)/sum(polt$VOTERS)
 polt.POLTAVCHENKO.sh.raw <- sum(polt$POLTAVCHENKO)/sum(polt$BULL.INVALID + polt$BULL.VALID)
+polt.EARLY.VOTE.raw <- sum(polt$BULL.ISS.PRELIMINARY)/sum(polt$BULL.INVALID + polt$BULL.VALID)
 
 # Adding calculable variables;
 polt$TURNOUT <- (polt$BULL.INVALID + polt$BULL.VALID)/polt$VOTERS
 polt$POLTAVCHENKO.sh <- polt$POLTAVCHENKO/(polt$BULL.INVALID + polt$BULL.VALID)
+polt$EARLY.VOTE <- polt$BULL.ISS.PRELIMINARY/(polt$BULL.INVALID + polt$BULL.VALID)
 
 # Breaking down by TIKs (Territorial Electoral Commissions);
 
@@ -49,5 +51,6 @@ TIK.NORM <- c(4, 6, 16, 21, 26, 30)
 
 polt.TIK.4_6_16_21_26_30 <- subset(polt, polt$TIK.NO==4 | polt$TIK.NO==6 | polt$TIK.NO==16 | polt$TIK.NO==21 | polt$TIK.NO==26 | polt$TIK.NO==30)
 
-sum(polt.TIK.4_6_16_21_26_30$BULL.INVALID + polt.TIK.4_6_16_21_26_30$BULL.VALID)/sum(polt.TIK.4_6_16_21_26_30$VOTERS)
-sum(polt.TIK.4_6_16_21_26_30$POLTAVCHENKO)/sum(polt.TIK.4_6_16_21_26_30$BULL.INVALID + polt.TIK.4_6_16_21_26_30$BULL.VALID)
+polt.TURNOUT.TIK.4_6_16_21_26_30 <- sum(polt.TIK.4_6_16_21_26_30$BULL.INVALID + polt.TIK.4_6_16_21_26_30$BULL.VALID)/sum(polt.TIK.4_6_16_21_26_30$VOTERS)
+polt.POLTAVCHENKO.sh.TIK.4_6_16_21_26_30 <- sum(polt.TIK.4_6_16_21_26_30$POLTAVCHENKO)/sum(polt.TIK.4_6_16_21_26_30$BULL.INVALID + polt.TIK.4_6_16_21_26_30$BULL.VALID)
+polt.EARLY.VOTE.TIK.4_6_16_21_26_30 <- sum(polt.TIK.4_6_16_21_26_30$BULL.ISS.PRELIMINARY)/sum(polt.TIK.4_6_16_21_26_30$BULL.INVALID + polt.TIK.4_6_16_21_26_30$BULL.VALID)

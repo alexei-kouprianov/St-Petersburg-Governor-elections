@@ -1,7 +1,7 @@
 # Nested under "poltavchenko.2014.main.r"
 # Requires data resulting from "poltavchenko.2014.reading_data.r"
 
-# General Sobianin-Sukovolskii plot (S-S plot);
+# General Sobianin-Sukhovolskii plot (S-S plot hereafter);
 
 png("ss.polt.2014.png", height=500, width=500)
 plot(polt$TURNOUT, polt$POLTAVCHENKO.sh,
@@ -31,7 +31,7 @@ dev.off()
 i <- i + 1
 }
 
-# Combining 30 plots in one table;
+# Combining 30 S-S plots in one table;
 
 png(file="ss.polt.2014.TIKs.png", height=3000, width=2500)
 par(mfrow=c(6,5), cex=1.2)
@@ -69,4 +69,20 @@ i <- i + 1
 
 abline(h=seq(0,1,.1), lty=3, col="grey")
 abline(v=seq(0,1,.1), lty=3, col="grey")
+dev.off()
+
+# Drawing two superimposed histograms for voters' turnout (red for "honest" TIKs, grey for all);
+
+png(file="/home/tinea/Documents/H_et_S/Projects/elections/poltavchenko.2014/TIKs/th.polt.2014.png", height=500, width=500)
+
+hist(polt$TURNOUT, xlim=c(0,1), ylim=c(0,80),
+breaks=seq(-.005,1.005,.01),
+col="grey",
+main="Выборы губернатора Петербурга, 14 сентября 2014 г.", xlab="Явка на участке", ylab="Количество участков с такой явкой")
+
+hist(polt.TIK.4_6_16_21_26_30$TURNOUT, xlim=c(0,1), ylim=c(0,80),
+breaks=seq(-.005,1.005,.01),
+col="red",
+add=TRUE)
+
 dev.off()

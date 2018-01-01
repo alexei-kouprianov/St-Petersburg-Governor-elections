@@ -73,7 +73,7 @@ dev.off()
 
 # Drawing two superimposed histograms for voters' turnout (red for "honest" TIKs, grey for all);
 
-png(file="/home/tinea/Documents/H_et_S/Projects/elections/poltavchenko.2014/TIKs/th.polt.2014.png", height=500, width=500)
+png(file="th.polt.2014.png", height=500, width=500)
 
 hist(polt$TURNOUT, xlim=c(0,1), ylim=c(0,80),
 breaks=seq(-.005,1.005,.01),
